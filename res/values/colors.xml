@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#30aada</color>
+    <color name="colorPrimaryDark">#2890b6</color>
+    <color name="colorAccent">#30aada</color>
+    
+    <!-- <color name="main_background">#333</color> -->
+    <color name="main_background">#fff</color>
+    <color name="menu_text_color_default">#333</color>
+    <color name="menu_text_color_disabled">#aaa</color>
+    <color name="tab_background">#eee</color>
+    
+    <color name="toolbar_background">#eee</color>
+    <color name="toolbar_button_background_default">@color/toolbar_background</color>
+    <color name="toolbar_button_background_pressed">#ddd</color>
+    
+    <color name="connection_status_not_connected">#e24444</color>
+    <color name="connection_status_waiting">#ad9728</color>
+    <color name="connection_status_connected">#48a758</color>
+    
+    <color name="button_pressed">#bbb</color>
+    <color name="button_default">#eee</color>
+    
+    <color name="button_pressed_action">#aaa</color>
+    <color name="button_default_action">#ddd</color>
+    
+    <color name="button_pressed_nav">#a4b5ca</color>
+    <color name="button_default_nav">#b8cae2</color>
+    
+    <color name="button_pressed_sys">#8ac196</color>
+    <color name="button_default_sys">#9adaa8</color>
+    
+    <color name="button_pressed_config">#eacaaa</color>
+    <color name="button_default_config">#f6d4b0</color>
+</resources>

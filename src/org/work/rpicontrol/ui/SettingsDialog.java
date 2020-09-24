@@ -8,6 +8,7 @@ import org.work.rpicontrol.sshutils.ExecTaskCallbackHandler;
 import org.work.rpicontrol.sshutils.SessionController;
 import org.work.rpicontrol.sshutils.SessionUserInfo;
 import org.work.rpicontrol.MainService;
+import org.work.rpicontrol.utils.SettingsListener;
 
 import android.app.Activity;
 import android.content.Context;
@@ -30,14 +31,15 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.LinearLayout;
 import android.graphics.Color;
 import android.os.Handler;
 import android.app.Dialog;
 import android.view.Window;
+import android.view.WindowManager;
 
 
 public class SettingsDialog {
-  
   
   private static final String PARENT_DIR = "..";
   
@@ -50,6 +52,10 @@ public class SettingsDialog {
   private EditText inPort;
   private RadioButton sysTypeKodi;
   private RadioButton sysTypeXbmc;
+  
+  private LinearLayout focus;
+  
+  private SettingsListener settingsListener;
   
   
   public SettingsDialog(Context context) {
@@ -66,6 +72,9 @@ public class SettingsDialog {
     
     dialog.setOnDismissListener(d -> {
       saveConfig();
+      // Fun.hideKeyboard(focus);
+      // focus.requestFocus();
+      if (settingsListener != null) settingsListener.onSettingsDismiss();
     });
     
     Window window = dialog.getWindow();
@@ -82,11 +91,14 @@ public class SettingsDialog {
     inPort = dialog.findViewById(R.id.inPort);
     sysTypeKodi = dialog.findViewById(R.id.sysTypeKodi);
     sysTypeXbmc = dialog.findViewById(R.id.sysTypeXbmc);
+    
+    focus = dialog.findViewById(R.id.focus);
   }
   
   
   public void showDialog() {
     restoreConfig();
+    focus.requestFocus();
     dialog.show();
   }
   
@@ -142,6 +154,11 @@ public class SettingsDialog {
     else {
       sysTypeKodi.setChecked(true);
     }
+  }
+  
+  
+  public void setSettingsListener(SettingsListener settingsListener) {
+    this.settingsListener = settingsListener;
   }
   
 }

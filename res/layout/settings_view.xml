@@ -4,43 +4,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp"
-    android:paddingLeft="12dp"
-    android:paddingRight="12dp" >
+    android:paddingTop="10dp"
+    android:paddingBottom="20dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
     
     <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:minWidth="300dp"
-      android:layout_marginBottom="5dp"
       android:orientation="vertical">
 
       <EditText
         android:id="@+id/inHost"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/settings_edit_text_height"
         android:layout_marginBottom="5dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:singleLine="true"
         android:maxLines="1"
-        android:inputType="text"
-        android:textSize="20dp"
+        android:inputType="text|textNoSuggestions"
+        android:textSize="@dimen/edit_field_text_size"
         android:hint="Host"
       />
       
       <EditText
         android:id="@+id/inUser"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/settings_edit_text_height"
         android:layout_marginBottom="5dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:singleLine="true"
         android:maxLines="1"
-        android:inputType="text"
-        android:textSize="20dp"
+        android:inputType="text|textNoSuggestions"
+        android:textSize="@dimen/edit_field_text_size"
         android:hint="User"
         android:text="root"
       />
@@ -48,28 +47,28 @@
       <EditText
         android:id="@+id/inPass"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/settings_edit_text_height"
         android:layout_marginBottom="5dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:singleLine="true"
         android:maxLines="1"
-        android:inputType="text"
-        android:textSize="20dp"
+        android:inputType="text|textNoSuggestions"
+        android:textSize="@dimen/edit_field_text_size"
         android:hint="Pass"
       />
       
       <EditText
         android:id="@+id/inPort"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/settings_edit_text_height"
         android:layout_marginBottom="5dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:singleLine="true"
         android:maxLines="1"
-        android:inputType="text"
-        android:textSize="20dp"
+        android:inputType="text|textNoSuggestions"
+        android:textSize="@dimen/edit_field_text_size"
         android:hint="Port"
         android:text="22"
       />
@@ -85,6 +84,7 @@
           android:layout_height="wrap_content"
           android:minWidth="90dp"
           android:background="@null"
+          android:textSize="@dimen/button_text_size"
           android:text="Kodi"
         />
         <RadioButton
@@ -94,8 +94,19 @@
           android:minWidth="90dp"
           android:background="@null"
           android:text="XBMC"
+          android:textSize="@dimen/button_text_size"
         />
       </RadioGroup>
+      
+      <LinearLayout
+        android:id="@+id/focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+      >
+        <requestFocus/>
+      </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

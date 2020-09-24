@@ -1,0 +1,19 @@
+<resources>
+  <dimen name="tab_text_size">20dp</dimen>
+  <dimen name="button_text_size">24dp</dimen>
+  <dimen name="button_num_text_size">28dp</dimen>
+  <dimen name="edit_field_text_size">24dp</dimen>
+  
+  <dimen name="header_height">42dp</dimen>
+  <dimen name="config_panel_height">70dp</dimen>
+  <dimen name="input_panel_height">66dp</dimen>
+  <dimen name="numbers_panel_height">60dp</dimen>
+  <dimen name="buttons_panel_height">80dp</dimen>
+  
+  <dimen name="log_input_panel_height">76dp</dimen>
+  
+  <dimen name="panel_separator_margin_small">6dp</dimen>
+  <dimen name="panel_separator_margin_large">12dp</dimen>
+  
+  <dimen name="settings_edit_text_height">70dp</dimen>
+</resources>

@@ -12,7 +12,7 @@
   <!-- HEADER -->
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="34dp"
+    android:layout_height="@dimen/header_height"
     android:gravity="center_vertical"
     android:layout_gravity="center_vertical"
   >
@@ -30,7 +30,7 @@
   <!-- CONFIG_PANEL -->
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="58dp"
+    android:layout_height="@dimen/config_panel_height"
     android:layout_marginBottom="6dp"
     android:orientation="horizontal"
     android:background="#f6d4b0"
@@ -78,8 +78,9 @@
   <!-- INPUT -->
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="54dp"
-    android:orientation="horizontal">
+    android:layout_height="@dimen/input_panel_height"
+    android:orientation="horizontal"
+  >
     <EditText
       android:id="@+id/textInput"
       android:layout_width="0dp"
@@ -89,14 +90,15 @@
       android:paddingRight="8dp"
       android:singleLine="true"
       android:maxLines="1"
-      android:inputType="text"
-      android:textSize="20dp"
+      android:inputType="text|textNoSuggestions"
+      android:textSize="@dimen/edit_field_text_size"
       android:hint="Text"
     />
     
     <FrameLayout
-      android:layout_width="68dp"
+      android:layout_width="0dp"
       android:layout_height="match_parent"
+      android:layout_weight="0.2"
       android:paddingTop="0dp"
       android:paddingBottom="8dp"
       android:paddingRight="4dp"
@@ -132,8 +134,8 @@
   <!-- NUM_BUTTONS -->
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="46dp"
-    android:layout_marginBottom="4dp"
+    android:layout_height="@dimen/numbers_panel_height"
+    android:layout_marginBottom="@dimen/panel_separator_margin_small"
     android:orientation="horizontal">
     
     <LinearLayout
@@ -211,8 +213,8 @@
   
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="46dp"
-    android:layout_marginBottom="8dp"
+    android:layout_height="@dimen/numbers_panel_height"
+    android:layout_marginBottom="@dimen/panel_separator_margin_large"
     android:orientation="horizontal">
     
     <LinearLayout
@@ -291,8 +293,8 @@
   <!-- OTHER_BUTTONS -->
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="64dp"
-    android:layout_marginBottom="4dp"
+    android:layout_height="@dimen/buttons_panel_height"
+    android:layout_marginBottom="@dimen/panel_separator_margin_small"
     android:orientation="horizontal">
     
     <LinearLayout
@@ -315,7 +317,7 @@
       android:layout_height="match_parent"
       android:layout_weight="0.2"
     >
-      <Button
+      <ImageButton
         android:id="@+id/btnUp"
         style="@style/buttonStyleNav"
         android:layout_width="match_parent"
@@ -363,8 +365,8 @@
   
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="64dp"
-    android:layout_marginBottom="4dp"
+    android:layout_height="@dimen/buttons_panel_height"
+    android:layout_marginBottom="@dimen/panel_separator_margin_small"
     android:orientation="horizontal">
     
     <FrameLayout
@@ -372,7 +374,7 @@
       android:layout_height="match_parent"
       android:layout_weight="0.2"
     >
-      <Button
+      <ImageButton
         android:id="@+id/btnLeft"
         style="@style/buttonStyleNav"
         android:layout_width="match_parent"
@@ -408,7 +410,7 @@
       android:layout_height="match_parent"
       android:layout_weight="0.2"
     >
-      <Button
+      <ImageButton
         android:id="@+id/btnRight"
         style="@style/buttonStyleNav"
         android:layout_width="match_parent"
@@ -443,8 +445,8 @@
   
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="64dp"
-    android:layout_marginBottom="8dp"
+    android:layout_height="@dimen/buttons_panel_height"
+    android:layout_marginBottom="@dimen/panel_separator_margin_large"
     android:orientation="horizontal">
     
     <LinearLayout
@@ -467,7 +469,7 @@
       android:layout_height="match_parent"
       android:layout_weight="0.2"
     >
-      <Button
+      <ImageButton
         android:id="@+id/btnDown"
         style="@style/buttonStyleNav"
         android:layout_width="match_parent"
@@ -517,8 +519,8 @@
   <!-- PLAYER_BUTTONS -->
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="64dp"
-    android:layout_marginBottom="4dp"
+    android:layout_height="@dimen/buttons_panel_height"
+    android:layout_marginBottom="@dimen/panel_separator_margin_small"
     android:orientation="horizontal">
     
     <FrameLayout
@@ -526,7 +528,7 @@
       android:layout_height="match_parent"
       android:layout_weight="0.2"
     >
-      <Button
+      <ImageButton
         android:id="@+id/btnStepBack"
         style="@style/buttonStyleAction"
         android:layout_width="match_parent"
@@ -548,7 +550,7 @@
       android:layout_height="match_parent"
       android:layout_weight="0.2"
     >
-      <Button
+      <ImageButton
         android:id="@+id/btnPlay"
         style="@style/buttonStyleAction"
         android:layout_width="match_parent"
@@ -569,7 +571,7 @@
       android:layout_height="match_parent"
       android:layout_weight="0.2"
     >
-      <Button
+      <ImageButton
         android:id="@+id/btnStop"
         style="@style/buttonStyleAction"
         android:layout_width="match_parent"
@@ -590,7 +592,7 @@
       android:layout_height="match_parent"
       android:layout_weight="0.2"
     >
-      <Button
+      <ImageButton
         android:id="@+id/btnStepForward"
         style="@style/buttonStyleAction"
         android:layout_width="match_parent"
@@ -624,8 +626,8 @@
   
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="64dp"
-    android:layout_marginBottom="4dp"
+    android:layout_height="@dimen/buttons_panel_height"
+    android:layout_marginBottom="@dimen/panel_separator_margin_small"
     android:orientation="horizontal">
     
     <FrameLayout
@@ -633,7 +635,7 @@
       android:layout_height="match_parent"
       android:layout_weight="0.2"
     >
-      <Button
+      <ImageButton
         android:id="@+id/btnVideoInfo"
         style="@style/buttonStyleAction"
         android:layout_width="match_parent"
@@ -655,7 +657,7 @@
       android:layout_height="match_parent"
       android:layout_weight="0.2"
     >
-      <Button
+      <ImageButton
         android:id="@+id/btnAspectRatio"
         style="@style/buttonStyleAction"
         android:layout_width="match_parent"
@@ -676,7 +678,7 @@
       android:layout_height="match_parent"
       android:layout_weight="0.2"
     >
-      <Button
+      <ImageButton
         android:id="@+id/btnCreateBookmark"
         style="@style/buttonStyleAction"
         android:layout_width="match_parent"
@@ -697,7 +699,7 @@
       android:layout_height="match_parent"
       android:layout_weight="0.2"
     >
-      <Button
+      <ImageButton
         android:id="@+id/btnShowBookmarks"
         style="@style/buttonStyleAction"
         android:layout_width="match_parent"
@@ -732,9 +734,11 @@
 </ScrollView>
 
 <LinearLayout
+  android:id="@+id/focus"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content"
-  android:focusable="true" android:focusableInTouchMode="true"
+  android:focusable="true"
+  android:focusableInTouchMode="true"
 >
   <requestFocus/>
 </LinearLayout>

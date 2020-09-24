@@ -3,6 +3,7 @@ package org.work.rpicontrol.fragments;
 import org.work.rpicontrol.R;
 import org.work.rpicontrol.utils.Fun;
 import org.work.rpicontrol.utils.Vars;
+import org.work.rpicontrol.utils.SettingsListener;
 import org.work.rpicontrol.sshutils.ConnectionStatusListener;
 import org.work.rpicontrol.sshutils.ExecTaskCallbackHandler;
 import org.work.rpicontrol.sshutils.SessionController;
@@ -38,9 +39,10 @@ import android.os.Handler;
 
 import android.text.TextWatcher;
 import android.text.Editable;
+import android.view.WindowManager;
 
 
-public class Tab1Fragment extends Fragment implements OnClickListener {
+public class Tab1Fragment extends Fragment implements OnClickListener, SettingsListener {
   
   public static final String FRAGMENT_TAG = "Tab1Fragment";
   private static final String TAG = "rpicontrol";
@@ -70,28 +72,28 @@ public class Tab1Fragment extends Fragment implements OnClickListener {
   private Button btnNum9;
   private Button btnNum0;
   private Button btnVolDown;
-  private Button btnUp;
+  private ImageButton btnUp;
   private Button btnVolUp;
   private Button btnRestart;
-  private Button btnLeft;
+  private ImageButton btnLeft;
   private Button btnOk;
-  private Button btnRight;
+  private ImageButton btnRight;
   private Button btnReboot;
-  private Button btnDown;
+  private ImageButton btnDown;
   private Button btnConfig;
   private Button btnBack;
   private Button btnMute;
   
-  private Button btnStepBack;
-  private Button btnPlay;
-  private Button btnStop;
-  private Button btnStepForward;
+  private ImageButton btnStepBack;
+  private ImageButton btnPlay;
+  private ImageButton btnStop;
+  private ImageButton btnStepForward;
   private Button btnMenu;
-  private Button btnVideoInfo;
-  private Button btnAspectRatio;
-  private Button btnCreateBookmark;
+  private ImageButton btnVideoInfo;
+  private ImageButton btnAspectRatio;
+  private ImageButton btnCreateBookmark;
   private Button btnVideoCodecInfo;
-  private Button btnShowBookmarks;
+  private ImageButton btnShowBookmarks;
 
   private Handler mHandler;
   private Handler mTvHandler;
@@ -119,6 +121,7 @@ public class Tab1Fragment extends Fragment implements OnClickListener {
     rootView = inflater.inflate(R.layout.tab1_view, container, false);
     
     settingsDialog = new SettingsDialog(context);
+    settingsDialog.setSettingsListener(this);
     
     btnConnect = (Button) rootView.findViewById(R.id.btnConnect);
     btnSettings = (Button) rootView.findViewById(R.id.btnSettings);
@@ -250,6 +253,14 @@ public class Tab1Fragment extends Fragment implements OnClickListener {
   
   
   // ---------------------
+  
+  @Override
+  public void onSettingsDismiss() {
+    Fun.log("..onSettingsDismiss");
+    // Fun.hideKeyboard();
+    // rootView.findViewById(R.id.focus).requestFocus();
+    // getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+  }
   
   public void onClick(View v) {
     switch (v.getId()) {
@@ -407,10 +418,10 @@ public class Tab1Fragment extends Fragment implements OnClickListener {
     
     setStatusWaiting();
     
-    String host = Fun.getSharedPref(context, Vars.PREF_KEY_SSH_HOST);
-    String user = Fun.getSharedPref(context, Vars.PREF_KEY_SSH_USER);
-    String pass = Fun.getSharedPref(context, Vars.PREF_KEY_SSH_PASS);
-    String portStr = Fun.getSharedPref(context, Vars.PREF_KEY_SSH_PORT);
+    String host = Fun.getSharedPref(context, Vars.PREF_KEY_SSH_HOST, Vars.DEFAULT_SSH_HOST);
+    String user = Fun.getSharedPref(context, Vars.PREF_KEY_SSH_USER, Vars.DEFAULT_SSH_USER);
+    String pass = Fun.getSharedPref(context, Vars.PREF_KEY_SSH_PASS, Vars.DEFAULT_SSH_PASS);
+    String portStr = Fun.getSharedPref(context, Vars.PREF_KEY_SSH_PORT, Vars.DEFAULT_SSH_PORT);
     
     int port = 22;
     try {

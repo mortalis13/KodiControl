@@ -20,6 +20,10 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.content.res.Configuration;
+
 
 public class Fun {
   
@@ -298,6 +302,20 @@ public class Fun {
     return textWidth;
   }
   
+  public static void hideKeyboard() {
+    Configuration config = context.getResources().getConfiguration();
+    if (config.keyboardHidden != Configuration.KEYBOARDHIDDEN_YES) {
+      InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+      imm.toggleSoftInput(0, 0);
+    }
+  }
+  
+  public static void hideKeyboard(View view) {
+    if (view == null) return;
+    InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+  }
+  
   
   //---------------------------------------------- Read/Write ----------------------------------------------
   
@@ -358,13 +376,17 @@ public class Fun {
   }
   
   public static String getSharedPref(Context context, String key) {
+    return getSharedPref(context, key, null);
+  }
+  
+  public static String getSharedPref(Context context, String key, String def) {
     if (context == null) {
       if (Fun.context == null) return null;
       context = Fun.context;
     }
     
     SharedPreferences sharedPreferences = context.getSharedPreferences(Vars.PREFS_FILE, 0);
-    return sharedPreferences.getString(key, null);
+    return sharedPreferences.getString(key, def);
   }
   
   

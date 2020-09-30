@@ -15,7 +15,7 @@ Remote control for [**Kodi**](https://kodi.tv) and [**LibreELEC**](https://libre
 - press **Connect** to establish a **SSH** connection with a **Raspberry Pi**
 - use buttons to navigate the menu and control the playback
 - use the **Text** field to type in the text when it's required (search dialogs, login info, etc.)
-- in the **Logs** tab you can view the system response and execute remote system commands (like `ls`, `cat`, `kodi-send --action="Action(Stop)"`, etc.)
+- in the **Logs** tab you can view the system response and execute remote system commands (like `ls`, `cat`, `df -h`, `kodi-send --action="Action(Stop)"`, etc.)
 
 ## Details
 
@@ -25,5 +25,5 @@ Remote control for [**Kodi**](https://kodi.tv) and [**LibreELEC**](https://libre
 ## Screenshots
 
 ![Image_1](_img/kodicontrol-1.png)<br><br>
-![Image_2](_img/kodicontrol-2.png)<br>
-![Image_2](_img/kodicontrol-3.png)<br>
+![Image_2](_img/kodicontrol-2.png)<br><br>
+![Image_2](_img/kodicontrol-3.png)<br><br>

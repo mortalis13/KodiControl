@@ -1,7 +1,7 @@
 
 # KodiControl
 
-![Icon](_img/icon.png)
+![Icon](_img/icon2.png)
 
 Remote control for [**Kodi**](https://kodi.tv) and [**LibreELEC**](https://libreelec.tv) on a **Raspberry Pi**.
 

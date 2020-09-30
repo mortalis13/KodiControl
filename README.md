@@ -24,6 +24,6 @@ Remote control for [**Kodi**](https://kodi.tv) and [**LibreELEC**](https://libre
 
 ## Screenshots
 
-![Image_1](_img/kodicontrol-1--.png)<br><br>
-![Image_2](_img/kodicontrol-2--.png)<br>
-![Image_2](_img/kodicontrol-3--.png)<br>
+![Image_1](_img/kodicontrol-1.png)<br><br>
+![Image_2](_img/kodicontrol-2.png)<br>
+![Image_2](_img/kodicontrol-3.png)<br>
